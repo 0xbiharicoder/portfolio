@@ -1,0 +1,75 @@
+/* Stronger Glitch Effect */
+html{
+    scroll-behavior: smooth;
+}
+.glitch {
+    position: relative;
+    color: white;
+    display: inline-block;
+    text-shadow: 
+      3px 3px 4px rgba(0, 0, 0, 0.4), 
+      -3px -3px 4px rgba(0, 255, 255, 0.8), 
+      3px -3px 4px rgba(255, 0, 255, 0.8), 
+      -3px 3px 4px rgba(255, 255, 0, 0.8);
+    animation: glitch-animation 0.7s infinite alternate-reverse, flicker 2s infinite;
+    overflow: hidden;
+  }
+  
+  /* Enhanced chaotic shifts */
+  @keyframes glitch-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+    15% {
+      transform: translate(-3px, 3px) skew(-1deg);
+      clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+    }
+    30% {
+      transform: translate(3px, -3px) skew(2deg);
+      clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
+    }
+    45% {
+      transform: translate(2px, 2px) skew(-1deg);
+      clip-path: polygon(0 40%, 100% 40%, 100% 70%, 0 70%);
+    }
+    60% {
+      transform: translate(-1px, 1px) skew(0.5deg);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  /* Chaotic flicker effect */
+  @keyframes flicker {
+    0%, 100% {
+      opacity: 1;
+    }
+    5% {
+      opacity: 0.9;
+    }
+    10% {
+      opacity: 0.3;
+    }
+    15% {
+      opacity: 0.7;
+    }
+    20% {
+      opacity: 0.1;
+    }
+    25% {
+      opacity: 0.6;
+    }
+    30% {
+      opacity: 0.5;
+    }
+    40% {
+      opacity: 0.8;
+    }
+  }
+  
+  /* Background remains unchanged */
+  .bg-dark {
+    background-color: #1a1a1a;
+  }
+  
